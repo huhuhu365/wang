@@ -1,0 +1,262 @@
+/**
+ * 
+ */
+package com.firstdevelop.boot.entity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author study
+ *
+ */
+public class Printstudent {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// 学生さんを1個生成する
+		Student studentone = new Student();
+		studentone.setId(1);
+		studentone.setName("zhao");
+		studentone.setBirthday(null);
+		studentone.setAge(9);
+		studentone.setScore(95);
+		studentone.setClassid(1);
+		// 学生さんを2個生成する
+		Student studenttwo = new Student();
+		studenttwo.setId(2);
+		studenttwo.setName("qian");
+		studenttwo.setBirthday(null);
+		studenttwo.setAge(10);
+		studenttwo.setScore(80);
+		studenttwo.setClassid(1);
+		// 学生さんを3個生成する
+		Student studentthree = new Student();
+		studentthree.setId(3);
+		studentthree.setName("sun");
+		studentthree.setBirthday(null);
+		studentthree.setAge(10);
+		studentthree.setScore(92);
+		studentthree.setClassid(1);
+		// 学生さんを4個生成する
+		Student studentfour = new Student();
+		studentfour.setId(4);
+		studentfour.setName("liu");
+		studentfour.setBirthday(null);
+		studentfour.setAge(8);
+		studentfour.setScore(50);
+        studentfour.setClassid(1);
+        
+        //
+//		System.out.println("1のAge:" + studentone.getAge());
+//		System.out.println("1のName:" + studentone.getName());
+//		System.out.println("1のscore:" + studentone.getScore());
+//		System.out.println("1のBirthday:" + studentone.getBirthday());
+//		System.out.println("1のClassid:" + studentone.getClassid());
+//		System.out.println("1のId:" + studenttwo.getId());
+//		System.out.println("2のAge:" + studenttwo.getAge());
+//		System.out.println("2のName:" + studenttwo.getName());
+//		System.out.println("2のscore:" + studenttwo.getScore());
+//		System.out.println("2のBirthday:" + studenttwo.getBirthday());
+//		System.out.println("2のClassid:" + studenttwo.getClassid());
+//		System.out.println("2のId:" + studenttwo.getId());
+//		System.out.println("3のAge:" + studentthree.getAge());
+//		System.out.println("3のName:" + studentthree.getName());
+//		System.out.println("3のscore:" + studentthree.getScore());
+//		System.out.println("3のBirthday:" + studentthree.getBirthday());
+//		System.out.println("3のClassid:" + studentthree.getClassid());
+//		System.out.println("3のId:" + studentfour.getId());
+//		System.out.println("4のAge:" + studentfour.getAge());
+//		System.out.println("4のName:" + studentfour.getName());
+//		System.out.println("4のscore:" + studentfour.getScore());
+//		System.out.println("4のBirthday:" + studentfour.getBirthday());
+//		System.out.println("4のClassid:" + studentfour.getClassid());
+//		System.out.println("4のId:" + studentfour.getId());
+		//第五学生
+		Student studentfive = new Student();
+		System.out.println(studentfive.getId());
+		System.out.println(studentfive.getName());
+		System.out.println(studentfive.getAge());
+		System.out.println(studentfive.getScore());
+		System.out.println(studentfive.getBirthday());
+		System.out.println(studentfive.getClassid());
+		
+		System.out.println("学生さん" + "Student:" + studentfive.toString());
+		
+		
+		//新規lsit studentlist
+		//List
+		List<Student> studentList = new ArrayList<Student>();
+		studentList.add(studentone);
+		studentList.add(studenttwo);
+		studentList.add(studentthree);
+		studentList.add(studentfour);
+		studentList.add(studentfive);
+//		成績合計変数初期化
+		double sumScore=0;
+//		for ループで成績合計計算
+		for(Student stu:studentList) {
+			sumScore=sumScore+stu.getScore();
+		}
+//		System.out.println("studentList"+studentList);	
+		//リストの第一個学生の情報を表示		
+		System.out.println("show first student");		
+		System.out.println(studentList.get(0).getId());		
+		System.out.println(studentList.get(0).getName());			
+		System.out.println(studentList.get(0).getScore());		
+		System.out.println(studentList.get(0).getBirthday());		
+		System.out.println(studentList.get(0).getClass());		
+		System.out.println(studentList.get(0).getClassid());		
+				
+		//リストの第二個学生の情報を表示		
+		System.out.println("show second student");		
+		System.out.println(studentList.get(1).getId());		
+		System.out.println(studentList.get(1).getName());				
+		System.out.println(studentList.get(1).getScore());		
+		System.out.println(studentList.get(1).getBirthday());		
+		System.out.println(studentList.get(1).getClass());		
+		System.out.println(studentList.get(1).getClassid());		
+				
+		//リストの第三個学生の情報を表示		
+		System.out.println("show third student");		
+		System.out.println(studentList.get(2).getId());		
+		System.out.println(studentList.get(2).getName());			
+		System.out.println(studentList.get(2).getScore());		
+		System.out.println(studentList.get(2).getBirthday());		
+		System.out.println(studentList.get(2).getClass());		
+		System.out.println(studentList.get(2).getClassid());		
+				
+				
+		//リストの第四個学生の情報を表示		
+		System.out.println("show forth student");		
+		System.out.println(studentList.get(3).getId());		
+		System.out.println(studentList.get(3).getName());			
+		System.out.println(studentList.get(3).getScore());		
+		System.out.println(studentList.get(3).getBirthday());		
+		System.out.println(studentList.get(3).getClass());		
+		System.out.println(studentList.get(3).getClassid());		
+				
+		//リストの第五個学生の情報を表示		
+		System.out.println("show forth student");		
+		System.out.println(studentList.get(4).getId());		
+		System.out.println(studentList.get(4).getName());			
+		System.out.println(studentList.get(4).getScore());		
+		System.out.println(studentList.get(4).getBirthday());		
+		System.out.println(studentList.get(4).getClass());		
+		System.out.println(studentList.get(4).getClassid());		
+				
+		//５回ループ内処理を回す		
+		 //成績合計変数を初期化		
+		 double sumScore=0;		
+		for(int i=0;i<5;i++)		
+		{		
+		//リスト内各学生の情報を表示		
+		System.out.println(studentList.get(i).getId());		
+		System.out.println(studentList.get(i).getName());			
+		System.out.println(studentList.get(i).getScore());		
+		//リスト内各学生の成績の合計		
+		 sumScore=sumScore+studentList.get(i).getScore();		
+		System.out.println(studentList.get(i).getBirthday());		
+		System.out.println(studentList.get(i).getClass());		
+		System.out.println(studentList.get(i).getClassid());		
+		}		
+
+		//List成績の合計
+		double sumStudentScore=getsumStudentScore(studentList);
+		System.out.println("the sum of studentscore:" + sumStudentScore);
+		
+		//List成績の最小値
+		double minStudentScore=getminStudentScore(studentList);
+		System.out.println("the min of studentscore:" + minStudentScore);
+		//新規Map
+		Map<String,Student>studentMap = new HashMap<>();
+		studentMap.put("学生さん1",studentone);
+		studentMap.put("学生さん2",studenttwo);
+		studentMap.put("学生さん3",studentthree);
+		studentMap.put("学生さん4",studentfour);
+		//プリントstudentMap
+//		System.out.println(studentMap);
+//		プリント学生の成績の合計
+		double sumStudentScoreMap = GetsumStudentScoreMap(studentMap);
+		System.out.println("学生の成績の合計Map: "+ sumStudentScoreMap);
+//		プリント学生の年齢の合計
+		double sumStudentAgeMap = GetsumStudentAgeMap(studentMap);
+		System.out.println("学生の年齢の合計Map: "+ sumStudentAgeMap);
+//		プリント学生の成績の最大値
+		double maxStudentScoreMap = GetmaxStudentScoreMap(studentMap);
+		System.out.println("学生の成績のmaxMap: "+ maxStudentScoreMap);
+//		プリント学生の成績の最大値
+		double minStudentScoreMap = GetminStudentScoreMap(studentMap);
+		System.out.println("学生の成績のminMap: "+ minStudentScoreMap);
+
+	}
+
+
+//      Map成績の合計
+	private static double GetsumStudentScoreMap(Map<String, Student> studentMap) {
+		double sumStudentScoreMap = 0;
+		for (Student stu : studentMap.values()) {
+			sumStudentScoreMap = sumStudentScoreMap + stu.getScore();
+		}
+		return sumStudentScoreMap;
+	}
+//	    Map年齢の合計
+	private static double GetsumStudentAgeMap(Map<String, Student> studentMap) {
+		double sumStudentAgeMap = 0;
+		for (Student stu : studentMap.values()) {
+			sumStudentAgeMap = sumStudentAgeMap + stu.getAge();
+		}
+		return sumStudentAgeMap;
+	}
+//　　Map成績の最大値
+private static double GetmaxStudentScoreMap(Map<String, Student> studentMap) {
+		double maxStudentScoreMap = 0;
+		for (Student stu : studentMap.values()) {
+			if (maxStudentScoreMap < stu.getScore()) {
+				maxStudentScoreMap = stu.getScore();
+			}
+		}
+		return maxStudentScoreMap;
+	}
+//　　　Map成績の最小値
+private static double GetminStudentScoreMap(Map<String, Student> studentMap) {
+	double minStudentScoreMap = 0;
+	for (Student stu : studentMap.values()) {
+		if (stu.getId() == 1) {
+			minStudentScoreMap = stu.getScore();
+		}else { 
+			if (minStudentScoreMap > stu.getScore()) {
+				minStudentScoreMap = stu.getScore();
+			}
+		}
+	}
+	return minStudentScoreMap;
+	}
+//      List最小値
+	private static double getminStudentScore(List<Student> studentList) {
+		double minScore=0;
+		for(Student stu:studentList) {
+			if(stu.getId()==1) {
+				minScore=stu.getScore();
+			}else {
+				if(minScore>stu.getScore()) {
+					minScore=stu.getScore();
+				}
+			}
+		}
+		return minScore;
+	}
+//      List合計
+	private static double getsumStudentScore(List<Student> studentList) {
+		double sumScore=0;
+		for(Student stu:studentList) {
+			sumScore=sumScore+stu.getScore();
+		}
+		return sumScore;
+	}
+
+}

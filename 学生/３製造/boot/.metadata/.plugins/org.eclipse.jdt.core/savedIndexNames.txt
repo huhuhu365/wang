@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\study\OneDrive\デスクトップ\zhou\boot\.metadata\.plugins\org.eclipse.jdt.core
+2036461390.index
+1550361615.index
+1865797976.index

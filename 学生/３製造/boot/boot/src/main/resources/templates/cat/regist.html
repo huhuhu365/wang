@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8">
+	<title>猫ユーザー</title>
+</head>
+
+<script type="text/javascript">
+	function check() {
+		//画面から項目値を取得する
+	    
+		var name=document.getElementById("name").value;
+		var color=document.getElementById("color").value;
+		var species=document.getElementById("species").value;
+		var size=document.getElementById("size").value;
+		//取得された値がチェックする
+		var hasValueFlig=true;
+		if(name==''||color==''||species==''||size==''){
+			hasValueFlig=false;//查看是否为空
+		}
+		//チェック結果により、送信する
+		if(hasValueFlig) {
+			//全て項目値が存在する
+			return true; //送信を実行
+		}else {
+			//空値が存在する
+			alert("空値を入力してください。");
+			return false; //　送信を中止	
+		}
+ }
+</script>
+<body>
+	<form action="/cat/regist" method="post" onsubmit="return check()">
+	
+	    <div>
+			猫のID:<input id="id" type="text" name="id"/>
+		</div>
+		<div>
+			猫の名前:<input id="name" type="text" name="name"/>
+		</div>
+		<div>
+			猫の色:<input id="color" type="text" name="color"/>
+		</div>
+		<div>
+			猫の種類:<input id="species" type="text" name="species"/>
+		</div>
+		<div>
+			猫のサイズ:<input id="size" type="text" name="size"/>
+		</div>
+		
+		<input type="submit" value="登録">
+	</form>
+</body>
+</html>

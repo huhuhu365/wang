@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.firstdevelop.boot.mapper.CatMapper">
+    <select id="searchAll" resultType="com.firstdevelop.boot.entity.Cat">
+        select
+            id,
+			name,
+			color,
+			species,
+			size
+        from
+            cat
+    </select>
+    
+    <insert id="regist" parameterType="com.firstdevelop.boot.entity.Cat">
+        insert into
+            cat
+            (
+            id,
+			name,
+			color,
+			species,
+			size
+            )
+        values
+            (
+            #(id),
+			#{name},
+			#{color},
+			#{species},
+			#{size}
+            )
+    </insert>
+
+	<delete id="delete" parameterType="com.firstdevelop.boot.entity.Cat">
+		DELETE FROM
+			cat
+		WHERE	
+			id = #{id}
+	</delete>
+</mapper>
