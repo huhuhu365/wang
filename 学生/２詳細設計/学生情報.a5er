@@ -1,0 +1,64 @@
+﻿# A5:ER FORMAT:16
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.17.4 Copyright © 1997 - 2022 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=student
+Author=wang
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Comment=おはようございます
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+BugFixEntityWidth=1
+
+[Entity]
+PName=student
+LName=学生情報
+Comment=学生情報
+TableOption=
+Page=MAIN
+Left=250
+Top=250
+Field="学生ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="学生名","student_name","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="生年月日","birthday","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="年齢","age","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="成績","score","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="クラスID","classid","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","delete_flg","@INT",,,"0","0:false 1:true",$FFFFFFFF,""
+Index=name_u=2,student_name
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20230430134647
+Position="MAIN",250,250,322,227
+ZOrder=1

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>ユーザー</title>
+</head>
+
+<body>
+    <a th:text="${title}"></a>
+    <table border="1" style="border-collapse:collapse">
+        <thead style="background:yellow">
+            <tr>
+            	<td style="width: 5%">id</td>
+                <td>商品名</td>
+                <td>販売値段</td>
+                <td>数量</td>
+                <td>生産日時</td>
+                <td>産地</td>
+                <td>消除</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${productList.size()} eq 0">
+                <td colspan="5">商品情報が存在しません。</td>
+            </tr>
+            <tr th:each="product : ${productList}">
+                <td th:text="${product.productId}"></td>
+                <td th:text="${product.productName}"></td>
+                <td class="productPrice" th:text="${product.productPrice}"></td>
+                <td th:text="${product.productAccount}"></td>
+                <td th:text="${product.productDate}"></td>
+                <td th:text="${product.address}"></td>
+                <td><a th:href="@{/product/delete/} + ${product.productId}">消除</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        最大値:<span id="max"></span><br>
+        最小値:<span id="min"></span><br>
+        平均値:<span id="average"></span><br>
+    </div>
+</body>
+<script type="text/javascript">
+    var len=Number(document.getElementsByClassName("productPrice").length);
+    var max=0;
+    var min=0;
+    if(len>0) {
+        min=Number(document.getElementsByClassName("productPrice")[0].innerText);
+    }
+    var averagr=0;
+    var sum=0;
+    for(var i=0;i<len;i++) {
+        var price=Number(document.getElementsByClassName("productPrice")[i].innerText);
+        if(max<price) {
+            max=price;
+        }
+        if(min>price) {
+            min=price;
+        }
+
+        sum=sum+price;
+    }
+    var average=sum/len;
+    //最大値
+    document.getElementById("max").innerText=max;
+    //最小値
+    document.getElementById("min").innerText=min;
+    //平均値
+    document.getElementById("average").innerText=average;
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8">
+	<title>学生ユーザー</title>
+</head>
+
+<script type="text/javascript">
+	function check() {
+		//画面から項目値を取得する
+		var id=document.getElementById("id").value;
+		var name=document.getElementById("name").value;
+		var birthday=document.getElementById("birthday").value;
+		var age=document.getElementById("age").value;
+		var score=document.getElementById("score").value;
+		var classid=document.getElementById("classid").value;
+		//取得された値がチェックする
+		var hasValueFlig=true;
+		if(id==''||name==''||birthday==''||age==''||score==''||classid==''){
+			hasValueFlig=false;//查看是否为空
+		}
+		//チェック結果により、送信する
+		if(hasValueFlig) {
+			//全て項目値が存在する
+			return true; //送信を実行
+		}else {
+			//空値が存在する
+			alert("空値を入力してください。");
+			return false; //　送信を中止	
+		}
+ }
+</script>
+<body>
+	<form action="/student/regist" method="post" onsubmit="return check()">
+	
+	    <div>
+			学生ID:<input id="id" type="text" name="id"/>
+		</div>
+		<div>
+			学生名前:<input id="name" type="text" name="name"/>
+		</div>
+		<div>
+			生年月日:<input id="birthday" type="text" name="birthday"/>
+		</div>
+		<div>
+			年齢:<input id="age" type="text" name="age"/>
+		</div>
+		<div>
+			得点:<input id="score" type="text" name="score"/>
+		</div>
+		<div>
+			クラスID:<input id="classid" type="text" name="classid"/>
+		</div>
+		
+		<input type="submit" value="登録">
+	</form>
+</body>
+</html>

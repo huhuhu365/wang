@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>猫ユーザー</title>
+</head>
+
+<body>
+    <a th:text="${title}"></a>
+    <table border="1" style="border-collapse:collapse">
+        <thead style="background:yellow">
+            <tr>
+            	<td style="width: 5%">id</td>
+                <td>猫の名前</td>
+                <td>猫の色</td>
+                <td>猫の種類</td>
+                <td>猫のサイズ</td>
+                <td>消除</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${catList.size()} eq 0">
+                <td colspan="5">猫情報が存在しません。</td>
+            </tr>
+            <tr th:each="cat : ${catList}">
+                <td th:text="${cat.id}"></td>
+                <td th:text="${cat.name}"></td>
+                <td th:text="${cat.color}"></td>
+                <td th:text="${cat.species}"></td>
+                <td th:text="${cat.size}"></td>
+                <td><a th:href="@{/cat/delete/} + ${cat.id}">消除</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
